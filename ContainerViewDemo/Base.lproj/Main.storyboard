@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ContainerViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="keY-gd-2dr" customClass="ImageHeaderView" customModule="ContainerViewDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="374"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xb0-oB-OQN">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="374"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="Ys7-3e-PpI" kind="embed" identifier="imagesPageViewControllerSegue" id="Ujn-QJ-clx"/>
+                                        </connections>
+                                    </containerView>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Map-Y4-56l">
+                                        <rect key="frame" x="168" y="337" width="39" height="37"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </pageControl>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="xb0-oB-OQN" secondAttribute="bottom" id="6HM-Ny-g9Y"/>
+                                    <constraint firstItem="xb0-oB-OQN" firstAttribute="leading" secondItem="keY-gd-2dr" secondAttribute="leading" id="RbH-rT-HjI"/>
+                                    <constraint firstItem="xb0-oB-OQN" firstAttribute="top" secondItem="keY-gd-2dr" secondAttribute="top" id="UUU-lj-Ygo"/>
+                                    <constraint firstAttribute="bottom" secondItem="Map-Y4-56l" secondAttribute="bottom" id="VmF-xg-F9S"/>
+                                    <constraint firstAttribute="trailing" secondItem="xb0-oB-OQN" secondAttribute="trailing" id="c8l-h5-8V6"/>
+                                    <constraint firstItem="Map-Y4-56l" firstAttribute="centerX" secondItem="keY-gd-2dr" secondAttribute="centerX" id="oEg-bM-qbb"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="pageControl" destination="Map-Y4-56l" id="E2R-FC-dkA"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="keY-gd-2dr" secondAttribute="bottom" constant="265" id="Lmv-mm-VTR"/>
+                            <constraint firstItem="keY-gd-2dr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XUh-JD-Zee"/>
+                            <constraint firstItem="keY-gd-2dr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="dUH-1u-Gas"/>
+                            <constraint firstAttribute="trailing" secondItem="keY-gd-2dr" secondAttribute="trailing" id="tTC-oN-lQ3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageHeaderView" destination="keY-gd-2dr" id="U2e-LB-idE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+        <!--Images Page View Controller-->
+        <scene sceneID="0pT-ok-O2K">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Ys7-3e-PpI" customClass="ImagesPageViewController" customModule="ContainerViewDemo" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yGe-Eg-spT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="962" y="35"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="w6V-dg-4yq">
+            <objects>
+                <viewController storyboardIdentifier="imageViewController" id="ise-Lq-2RH" customClass="ImageViewController" customModule="ContainerViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eBX-wL-Y1i"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Bg-cS-bxA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="21l-9M-BhM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="I1" translatesAutoresizingMaskIntoConstraints="NO" id="T0J-z4-7yd">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="T0J-z4-7yd" secondAttribute="trailing" id="MSD-XF-NJK"/>
+                            <constraint firstItem="T0J-z4-7yd" firstAttribute="leading" secondItem="21l-9M-BhM" secondAttribute="leading" id="fF6-fB-gYE"/>
+                            <constraint firstItem="7Bg-cS-bxA" firstAttribute="top" secondItem="T0J-z4-7yd" secondAttribute="bottom" id="iU1-xw-CeV"/>
+                            <constraint firstItem="T0J-z4-7yd" firstAttribute="top" secondItem="eBX-wL-Y1i" secondAttribute="bottom" id="wDF-tD-Xn8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="T0J-z4-7yd" id="Whq-pU-51t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IHt-kX-PwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1756" y="131"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="I1" width="540" height="720"/>
+    </resources>
+</document>
